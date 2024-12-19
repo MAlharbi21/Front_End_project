@@ -1,0 +1,20 @@
+/* ## Colors */
+/* ### Primary */
+
+.primary {
+    color: hsl(243, 87%, 12%);
+    color: hsl(238, 22%, 44%);
+}
+
+/* ### Accent */
+.Accent {
+    color: hsl(224, 93%, 58%);
+    color: hsl(170, 45%, 43%)
+}
+
+/* ### Neutral */
+
+.Neutral {
+    color: hsl(240, 75%, 98%);
+    color: hsl(0, 0%, 75%);
+}

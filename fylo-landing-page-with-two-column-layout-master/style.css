@@ -1,0 +1,254 @@
+/* general styles */
+body {
+    margin: 0;
+    font-family: OpenSans;
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: Raleway;
+    src: url(fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url(fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+
+
+ul li {
+    list-style-type: none;
+}
+
+a {
+    color: hsl(170, 45%, 43%);
+    margin-bottom: 10px;
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+
+li a {
+    color: hsl(238, 22%, 44%);
+    text-decoration: none;
+    border: 0;
+}
+
+
+h1 {
+    color: hsl(243, 87%, 12%);
+    font-family: Raleway;
+    font-weight: bolder;
+}
+
+button {
+    color: white;
+    background-color: #3065f890;
+    border: 0;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+    width: 200px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid hsl(0, 0%, 75%);
+    border-radius: 3px;
+}
+
+/* layout section style */
+.section_one, .section_two, .section_three, .section_four, .section_five {
+    display: flex;
+    padding: 20px 40px;
+}
+
+
+/* section one style */
+.section_one .left, .section_one .right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.section_one .right {
+    justify-content: flex-end;
+}
+
+.section_one .right ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+/* section two style */
+.section_two .left, .section_two .right {
+    width: 50%;
+    display: flex;
+}
+
+.section_two .left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section_two .left .nested {
+    display: flex;
+}
+
+.section_two .left .nested input {
+    width: 250px;
+}
+
+.section_two .right img {
+    width: 100%;
+}
+
+/* section three style */
+.pre_section_three {
+    margin-bottom: -45px;
+}
+
+.pre_section_three img {
+    width: 100%;
+}
+
+
+.section_three {
+    background-color: hsl(240, 75%, 98%);
+    ;
+}
+
+.section_three .left, .section_three .right {
+    display: inline-block;
+    width: 49%;
+}
+
+.section_three .left .testimonial {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 20px hsl(240, 75%, 98%);
+    padding: 20px;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.section_three .left .testimonial .person {
+    display: flex;
+}
+
+.section_three .left .testimonial .person h4, .section_three .left .testimonial .person p {
+    margin: 5px;
+}
+
+.section_three .left .testimonial .person>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section_three .left .testimonial .person img {
+    border-radius: 100%;
+    width: 20%;
+}
+
+.section_three .right img {
+    width: 100%;
+}
+
+/* section four style */
+
+
+.section_four {
+    background-color: hsl(238, 22%, 44%);
+    color: white;
+    padding: 80px 40px;
+}
+
+.section_four h1 {
+    color: white;
+}
+
+.section_four .left, .section_four .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+/* section five style */
+.section_five {
+    background-color: hsl(243, 87%, 12%);
+    ;
+}
+
+.section_five .one, .section_five .two, .section_five .three, .section_five .four {
+    width: 25%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.section_five .one {
+    align-items: flex-start;
+}
+
+.section_five .one .item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 2px;
+}
+
+.section_five .four ul {
+    display: flex;
+}
+
+.section_five .four ul li {
+    margin: 5px;
+}
+
+
+
+/* media query */
+@media (max-width:700px) {
+    .section_two, .section_three, .section_four , .section_five {
+        display: block;
+    }
+
+    .section_two .left, .section_two .right,
+    .section_three .left, .section_three .right,
+    .section_four .left, .section_four .right,
+    .section_five .one,.section_five .four {
+        width: 100%;
+        display: flex;
+    }
+
+    .section_five .one{
+        display: flex;
+        align-items:center ;
+    }
+
+
+    .section_five .two,.section_five .three {
+        width: 49%;
+        display: inline-block;
+    }
+
+    .section_three .left {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+}

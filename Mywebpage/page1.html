@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>My Resume</title>
+
+<style>
+    /* -------------------------------------------------------------
+       FONT IMPORTS (Use Google Fonts or similar)
+       ------------------------------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap');
+
+    /* -------------------------------------------------------------
+       BASE STYLING
+       ------------------------------------------------------------- */
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('https://via.placeholder.com/1200x800.png?text=Background+Painting+Texture') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Cormorant Garamond', serif;
+        color: #333;
+    }
+
+    /* A semi-opaque overlay to ensure text visibility */
+    body::before {
+        content: "";
+        position: fixed;
+        top:0; left:0; right:0; bottom:0;
+        background: rgba(255,255,255,0.7);
+        z-index: -1;
+    }
+
+    /* -------------------------------------------------------------
+       CONTAINER
+       ------------------------------------------------------------- */
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 20px;
+    }
+
+    /* -------------------------------------------------------------
+       HEADER
+       ------------------------------------------------------------- */
+    header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    header h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 4em;
+        margin: 0;
+        color: #444;
+    }
+
+    header h2 {
+        font-size: 1.4em;
+        font-weight: 400;
+        margin-top: 10px;
+        color: #666;
+    }
+
+    /* -------------------------------------------------------------
+       PROFILE SECTION
+       ------------------------------------------------------------- */
+    .profile {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+
+    .profile .photo {
+        flex: 1 1 300px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .profile .photo img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        object-fit: cover;
+    }
+
+    .profile .info {
+        flex: 2 1 500px;
+        padding-left: 20px;
+    }
+
+    .profile .info p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-top: 0;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION HEADINGS
+       ------------------------------------------------------------- */
+    .section-heading {
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-align: left;
+        position: relative;
+        display: inline-block;
+        color: #444;
+    }
+
+    .section-heading::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        background: #444;
+        margin-top: 10px;
+    }
+
+    /* -------------------------------------------------------------
+       SKILLS
+       ------------------------------------------------------------- */
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .skill-category {
+        flex: 1 1 300px;
+        margin-bottom: 30px;
+    }
+
+    .skill-category h3 {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .skill-list li {
+        margin-bottom: 8px;
+    }
+
+    /* -------------------------------------------------------------
+       EXPERIENCE / PROJECTS
+       ------------------------------------------------------------- */
+    .timeline {
+        margin-bottom: 50px;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+
+    .timeline-item h4 {
+        margin: 0 0 5px;
+        font-weight: 700;
+        font-size: 1.3em;
+    }
+
+    .timeline-item .role {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 5px;
+    }
+
+    .timeline-item .timeframe {
+        color: #978d8d;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       PORTFOLIO
+       ------------------------------------------------------------- */
+    .portfolio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .portfolio-item {
+        flex: 1 1 300px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        display: block;
+    }
+
+    .portfolio-item h4 {
+        font-size: 1.2em;
+        margin: 10px;
+    }
+
+    .portfolio-item p {
+        font-size: 0.95em;
+        margin: 10px;
+        line-height: 1.4;
+        color: #555;
+    }
+
+    .portfolio-item a {
+        display: inline-block;
+        margin: 10px;
+        color: #7a5252;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 1px solid #444;
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT
+       ------------------------------------------------------------- */
+    .contact {
+        text-align: center;
+    }
+
+    .contact p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .contact a {
+        color: #444;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 1px solid #444;
+    }
+
+    /* -------------------------------------------------------------
+       EDUCATION SECTION
+       ------------------------------------------------------------- */
+    .education .timeline-item h4 {
+        font-size: 1.5em;
+    }
+    .education .timeline-item .role {
+        font-size: 1.2em;
+    }
+    .education .timeline-item p, 
+    .education .timeline > p {
+        font-size: 1.2em;
+    }
+    .education .timeline-item .timeframe {
+        font-size: 1.2em; /* Increased font size for the timeframe (years) */
+        color: #333;
+    }
+
+    /* Hover effects */
+    a:hover {
+        color: #000;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .profile {
+            flex-direction: column;
+            text-align: center;
+        }
+        .profile .info {
+            padding-left: 0;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mohammed Hamad Alharbi</h1>
+        <h2>Computer Science</h2>
+    </header>
+    
+    <section class="profile">
+        <div class="photo">
+            <img src="a" alt="Your Portrait">
+        </div>
+        <div class="info">
+            <p>
+                Seeking to become a successful expert in the field by channelizing my technical knowledge and 
+                skills to ensure personal and professional growth and to contribute to the prosperity of the 
+                organization.
+            </p>
+        </div>
+    </section>
+
+    <section class="education">
+        <h2 class="section-heading">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4><strong>Bachelor of Science, Computer Science</strong></h4>
+                <div class="role">Graduated with Second Class Honors from Taibah University in Yanbu, GPA 4.27/5.0</div>
+                <div class="timeframe"><strong>2017 - 2021</strong></div>
+                <p>
+                    <strong>Certification:</strong> English Proficiency: Scored 83 on the Standardized Test of English Proficiency (STEP).
+                    <span class="timeframe">2024</span>
+                </p>
+            </div>
+            <p>
+                Studied core subjects in computer science, including programming, data structures, algorithms, operating systems,  
+                database management systems, computer networks, and software engineering. Gained a strong understanding of  
+                problem-solving, logical thinking, and software development practices.
+            </p> 
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2 class="section-heading">Skills</h2>
+        <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <ul class="skill-list">
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>C++, C</li>
+                <li>Git, GitHub</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h3>Operating System</h3>
+            <ul class="skill-list">
+                <li>Windows 10, Ubuntu, Kali Linux</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h2 class="section-heading">Projects</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Vulnerability Assessment and Penetration Testing</h4>
+                <p>
+                    Conducted a penetration test using Kali Linux tools to identify and exploit vulnerabilities on a simulated network.  
+                    Utilized tools such as <strong>Nmap</strong> for network scanning, <strong>Metasploit</strong> for exploitation, and <strong>Wireshark</strong> for packet analysis.  
+                    Delivered a comprehensive report outlining vulnerabilities, risks, and mitigation recommendations.
+                </p>
+            </div>
+            <div class="timeline-item">
+                <h4><strong>Linux Server Setup and Administration</strong></h4>
+                <p>
+                    Deployed and configured a Linux server for user and group management, file permissions, and package management.  
+                    Implemented security measures such as SSH hardening, and automated system updates. Monitored system performance and processes using tools like <strong>top</strong> and <strong>htop</strong>.
+                </p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <h4><strong>Personal Portfolio Website</strong></h4>
+            <p>
+                Designed and developed a responsive personal portfolio website using <strong>HTML, CSS, and JavaScript</strong>.  
+                Showcased personal skills, certifications, and projects in an organized layout.  
+                Implemented a mobile-friendly design with interactive elements such as navigation menus and animations.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <h4><strong>Rock, Scissors, Paper Game</strong></h4>
+            <p>
+                Developed a console-based game in <strong>C++</strong> that allows a player to compete against the computer.  
+                Implemented random number generation for computer moves and user input validation.  
+                Used conditional statements to determine the winner and provide a user-friendly gaming experience.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-heading">Contact</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out:</p>
+        <p>Email: <a href="mailto:mohammed.har32@gmail.com">My Email</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-hamad-alharbi" target="_blank">LinkedIn Profile</a></p>
+        <p>GitHub: <a href="https://github.com/MAlharbi21" target="_blank">GitHub Profile</a></p>
+    </section>
+
+</div>
+
+</body>
+</html>
